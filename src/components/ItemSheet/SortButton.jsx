@@ -31,5 +31,20 @@ const SortButton = ({ columnName, index, selColumn, setSelColumn }) => {
     </>
   );
 };
+const SortLabel = styled.label`
+  &.active {
+    & > svg {
+      opacity: 1;
+    }
+  }
+  & > svg {
+    opacity: 0;
+    color: red;
+  }
+  &:hover > svg {
+    opacity: 1;
+  }
+`;
+const SortBtn = styled.button``;
 
 export default SortButton;
