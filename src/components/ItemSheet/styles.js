@@ -1,26 +1,36 @@
 import styled from "styled-components";
+import * as Constants from "constants";
 
 export const TableWrapper = styled.div`
   overflow: auto;
-  height: 85vh;
+  position: relative;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `;
 
 export const Table = styled.table`
   overflow: auto;
+  border: 1px solid ${Constants.GRAY4};
+  border-collapse: collapse;
 `;
 
 export const Thead = styled.thead`
   position: sticky;
-  top: 1px;
-  background-color: #fff;
+  top: 0;
+  background-color: ${Constants.GRAY3};
+  color: ${Constants.BLACK};
+  font-size: 14px;
 `;
 
 export const Th = styled.th`
   position: sticky;
   padding: 10px;
-  outline: 1px solid black;
   text-align: center;
   white-space: nowrap;
+  border: 1px solid ${Constants.GRAY4};
 
   div {
     display: flex;
@@ -35,15 +45,18 @@ export const Th = styled.th`
 
 export const Tr = styled.tr`
   padding: 100px;
-  background-color: ${(props) => props.clickedId === props.id && "#d9f0f8"};
+  background-color: ${(props) =>
+    props.clickedId === props.id && `${Constants.LIGHTBLUE}`};
 `;
 
 export const Td = styled.td`
   padding: 15px;
   text-align: center;
-  outline: 1px solid black;
   white-space: nowrap;
-  background-color: ${(props) => props.clickedId === props.id && "#d9f0f8"};
+  border: 1px solid ${Constants.GRAY4};
+
+  background-color: ${(props) =>
+    props.clickedId === props.id && `${Constants.LIGHTBLUE}`};
 `;
 
 export const SortLabel = styled.label`
@@ -54,7 +67,7 @@ export const SortLabel = styled.label`
   }
   & > svg {
     opacity: 0;
-    color: red;
+    color: ${Constants.BLUE};
   }
   &:hover > svg {
     opacity: 1;

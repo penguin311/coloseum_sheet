@@ -7,7 +7,7 @@ import CardTitle from "./CardTitle";
 import * as Constants from "constants";
 
 const Card = ({ data }) => {
-  if (!data) return <div>로딩중</div>;
+  if (!data) return null;
   return (
     <S.CardContainer>
       <CardTitle

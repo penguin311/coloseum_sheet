@@ -1,11 +1,12 @@
-import Cards from "components/Cards";
 import GlobalStyle from "./style/GlobalStyle";
 import MainPage from "layout/MainPage";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { tableActions } from "./store";
 import MOCK_DATA from "assets/MOCK_DATA.json";
 import ItemsPage from "components/ItemSheet";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { tableActions } from "store/tableSlice";
+
+import SelectView from "components/SelectView";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const App = () => {
       <GlobalStyle />
       {/* <Cards /> */}
       <ItemsPage />
+      <SelectView />
     </MainPage>
   );
 };
